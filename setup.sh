@@ -4,7 +4,7 @@ cf_email=
 # CloudFlare global API key
 # > Grab it from CloudFlare > Profile > API keys
 cf_key=
-
+# Home directory
 home_dir=
 
 # Set iptables rules

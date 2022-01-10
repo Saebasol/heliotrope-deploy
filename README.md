@@ -1,6 +1,6 @@
 # heliotrope-deploy
 
-> This repository makes it easy to deploy heliotrope.
+> This repository makes it easy to deploy heliotrope.  
 > ref: <https://github.com/seia-soto/saebasol-the-server>
 
 ## How to?
@@ -26,5 +26,6 @@ sudo bash setup.sh
 
 ## Warning
 
+* You need to apply the domain for which you received the certificate.
 * If you modify the forwarded secret, you must also modify ``docker\gateway\snippets\_proxy_preset.conf``.
 * Deploying with default settings can be dangerous.
