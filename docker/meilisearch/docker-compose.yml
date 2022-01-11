@@ -3,7 +3,7 @@ version: "3.8"
 services:
   meilisearch:
     container_name: meilisearch
-    image: getmeili/meilisearch:v0.25.0rc2
+    image: getmeili/meilisearch:v0.25.0
     restart: always
     ports:
       - 127.0.0.1:7700:7700
