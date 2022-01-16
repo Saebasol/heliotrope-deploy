@@ -27,22 +27,22 @@ netfilter-persistent save
 
 
 curl https://get.acme.sh | sh -s email=$cf_email && \
-  $home_dir/.acme.sh/acme.sh --issue --dns dns_cf -d api.saebasol.org
+  $home_dir/heliotrope-deploy/.acme.sh/acme.sh --issue --dns dns_cf -d api.saebasol.org
 
-echo "export CF_Key=\"$cf_key\"" >> $home_dir/.acme.sh/account.conf
-echo "export CF_Email=\"$cf_email\"" >> $home_dir/.acme.sh/account.conf
+echo "export CF_Key=\"$cf_key\"" >> $home_dir/heliotrope-deploy/.acme.sh/account.conf
+echo "export CF_Email=\"$cf_email\"" >> $home_dir/heliotrope-deploy/.acme.sh/account.conf
 
-ln -s $home_dir/.acme.sh $home_dir/docker/certs
+ln -s $home_dir/heliotrope-deploy/.acme.sh $home_dir/heliotrope-deploy/docker/certs
 
 $_runas bash<<EOF
   docker network create -d bridge saebasol
-  cd $home_dir/docker/database
+  cd $home_dir/heliotrope-deploy/docker/database
   docker-compose up -d
-  cd $home_dir/docker/meilisearch
+  cd $home_dir/heliotrope-deploy/docker/meilisearch
   docker-compose up -d
-  cd $home_dir/docker/gateway
+  cd $home_dir/heliotrope-deploy/docker/gateway
   docker-compose up -d
-  cd $home_dir/docker/heliotrope
+  cd $home_dir/heliotrope-deploy/docker/heliotrope
   docker-compose up -d
   docker ps
 EOF
