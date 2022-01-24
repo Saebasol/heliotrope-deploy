@@ -38,7 +38,7 @@ $_runas bash<<EOF
   docker network create -d bridge saebasol
   cd $home_dir/heliotrope-deploy/docker/database
   docker-compose up -d
-  cd $home_dir/heliotrope-deploy/docker/meilisearch
+  cd $home_dir/heliotrope-deploy/docker/mongo
   docker-compose up -d
   cd $home_dir/heliotrope-deploy/docker/gateway
   docker-compose up -d
