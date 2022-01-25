@@ -1,0 +1,12 @@
+{
+    "mappings": {
+        "dynamic": true,
+        "fields": {
+            "title": {
+                "analyzer": "lucene.korean",
+                "searchAnalyzer": "lucene.korean",
+                "type": "string"
+            }
+        }
+    }
+}
