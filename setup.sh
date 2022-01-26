@@ -46,3 +46,5 @@ $_runas bash<<EOF
   docker-compose up -d
   docker ps
 EOF
+
+docker exec -d mongo `mongo -u root -p test --eval "db.getSiblingDB('hitomi').getCollection('info').createIndex({'title':'text'}, {'language_override': 'korean'})"`
