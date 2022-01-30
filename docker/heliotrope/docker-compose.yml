@@ -17,6 +17,7 @@ services:
       SANIC_FORWARDED_SECRET: forwarded_secret
       SANIC_GALLERYINFO_DB_URL: postgresql+asyncpg://postgres_user:postgres_password@database/postgres_db
       SANIC_INFO_DB_URL: mongodb://heliotrope:heliotrope@mongo
+      SANIC_USE_ATLAS_SEARCH: "false"
     networks:
       - saebasol
 
