@@ -40,8 +40,8 @@ $_runas bash<<EOF
   docker-compose up -d
   cd $home_dir/heliotrope-deploy/docker/mongo
   docker-compose up -d
-  docker exec -d mongo `mongo -u root -p test --eval "db.getSiblingDB('hitomi').createCollection('info')"`
-  docker exec -d mongo `mongo -u root -p test --eval "db.getSiblingDB('hitomi').getCollection('info').createIndex({'title':'text'}, {'language_override': 'korean'})"`
+  docker exec -d mongo `mongo -u heliotrope -p heliotrope --eval "db.getSiblingDB('hitomi').createCollection('info')"`
+  docker exec -d mongo `mongo -u heliotrope -p heliotrope --eval "db.getSiblingDB('hitomi').getCollection('info').createIndex({'title':'text'}, {'language_override': 'korean'})"`
   cd $home_dir/heliotrope-deploy/docker/gateway
   docker-compose up -d
   cd $home_dir/heliotrope-deploy/docker/heliotrope
